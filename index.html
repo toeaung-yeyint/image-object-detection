@@ -5,6 +5,9 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/addons/p5.sound.min.js"></script>
+		<script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
 	</head>
 	<body>
 		<form class="form">
@@ -14,18 +17,40 @@
 				<button type="submit">Detect</button>
 			</div>
 		</form>
+		<img class="resultImage" src="" alt="" />
+		<p class="numberOfDetection"></p>
+		<ul class="resultObjectList"></ul>
 		<script>
 			const form = document.querySelector(".form");
+			const resultImage = document.querySelector(".resultImage");
+			const numberOfDetection = document.querySelector(".numberOfDetection");
+			const resultList = document.querySelector(".resultObjectList");
 			form.addEventListener("submit", (e) => {
 				e.preventDefault();
+				numberOfDetection.innerText = "";
+				resultList.innerText = "";
 				const image = document.querySelector("#fileUpload");
-				console.log(image.files[0]);
-				const imageElement = document.createElement("img");
-				imageElement.src = URL.createObjectURL(image.files[0]);
-				imageElement.style.width = "200px";
-				imageElement.style.height = "200px";
-				imageElement.style.objectFit = "cover";
-				document.body.append(imageElement);
+				resultImage.src = URL.createObjectURL(image.files[0]);
+				resultImage.style.width = "400px";
+				resultImage.style.height = "400px";
+				resultImage.style.objectFit = "cover";
+				// create an object detector using cocossd model
+				const objectDetector = ml5.objectDetector("cocossd");
+				// detect objects from image using object detector
+				objectDetector.detect(resultImage).then((objects) => {
+					objects.forEach((object) => {
+						console.log(object.label);
+						console.log(object.confidence);
+						resultList.insertAdjacentHTML(
+							"beforeend",
+							`<li>${object.label} | confidence score: ${Math.round(
+								object.confidence * 100,
+								2
+							)} %</li>`
+						);
+					});
+					numberOfDetection.innerText = `Number of detected object(s): ${objects.length}`;
+				});
 			});
 		</script>
 	</body>
