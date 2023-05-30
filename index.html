@@ -1,45 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/addons/p5.sound.min.js"></script>
-    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
-    <link rel="stylesheet" href="./src/index.css" />
-    <script type="module" src="./src/index.js"></script>
-  </head>
-  <body>
-    <nav class="bg-dark justify-content-between nav py-1">
-      <a
-        class="nav-link fs-5"
-        href="https://toeaung-yeyint.github.io/my-portfolio/dist/index.html"
-        >Home</a
-      >
-      <a class="nav-link fs-5" href="#">Contact Me</a>
-    </nav>
-    <div class="container mt-5">
-      <div class="row m-3">
-        <div class="col-lg-8 mx-auto">
-          <form class="form d-flex flex-column row-gap-3">
-            <div>
-              <label for="fileUpload">Upload Image:</label>
-              <input id="fileUpload" name="fileUpload" type="file" />
-            </div>
-            <button class="btn btn-primary" type="submit">Detect</button>
-            <button class="btn btn-danger" type="reset">Rest</button>
-          </form>
-        </div>
-      </div>
-      <div class="row m-3">
-        <div class="col-lg-8 mx-auto">
-          <img class="resultImage" src="" alt="" />
-          <p class="numberOfDetection"></p>
-          <ul class="resultObjectList"></ul>
-        </div>
-      </div>
-    </div>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/addons/p5.sound.min.js"></script>
+		<script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+		<link rel="stylesheet" href="./src/index.css" />
+		<script type="module" src="./src/index.js"></script>
+	</head>
+	<body>
+		<nav class="bg-dark justify-content-between nav py-1">
+			<a
+				class="nav-link fs-5"
+				href="https://toeaung-yeyint.github.io/my-portfolio/dist/index.html"
+				>Home</a
+			>
+			<a class="nav-link fs-5" href="#">Contact Me</a>
+		</nav>
+		<div class="container mt-5">
+			<div class="row m-3">
+				<div class="col-lg-8 mx-auto">
+					<form class="form d-flex flex-column row-gap-3">
+						<div>
+							<label for="image-upload">Upload Image:</label>
+							<input
+								id="image-upload"
+								name="image-upload"
+								type="file"
+								required
+							/>
+						</div>
+						<button class="btn btn-primary" type="submit">Detect</button>
+					</form>
+					<button class="btn btn-danger reset-button mt-3 w-100" type="reset">
+						Rest
+					</button>
+				</div>
+			</div>
+			<div class="row m-3 mt-5">
+				<div class="col-lg-8 mx-auto result"></div>
+			</div>
+		</div>
+	</body>
 </html>
