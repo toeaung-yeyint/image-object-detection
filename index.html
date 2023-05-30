@@ -12,16 +12,34 @@
     <script type="module" src="./src/index.js"></script>
   </head>
   <body>
-    <form class="form">
-      <label for="fileUpload">Upload Image:</label>
-      <input id="fileUpload" name="fileUpload" type="file" />
-      <div>
-        <button type="submit">Detect</button>
-        <button type="reset">Rest</button>
+    <nav class="bg-dark justify-content-between nav py-1">
+      <a
+        class="nav-link fs-5"
+        href="https://toeaung-yeyint.github.io/my-portfolio/dist/index.html"
+        >Home</a
+      >
+      <a class="nav-link fs-5" href="#">Contact Me</a>
+    </nav>
+    <div class="container mt-5">
+      <div class="row m-3">
+        <div class="col-lg-8 mx-auto">
+          <form class="form d-flex flex-column row-gap-3">
+            <div>
+              <label for="fileUpload">Upload Image:</label>
+              <input id="fileUpload" name="fileUpload" type="file" />
+            </div>
+            <button class="btn btn-primary" type="submit">Detect</button>
+            <button class="btn btn-danger" type="reset">Rest</button>
+          </form>
+        </div>
       </div>
-    </form>
-    <img class="resultImage" src="" alt="" />
-    <p class="numberOfDetection"></p>
-    <ul class="resultObjectList"></ul>
+      <div class="row m-3">
+        <div class="col-lg-8 mx-auto">
+          <img class="resultImage" src="" alt="" />
+          <p class="numberOfDetection"></p>
+          <ul class="resultObjectList"></ul>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
