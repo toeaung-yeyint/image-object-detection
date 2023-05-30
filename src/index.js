@@ -15,10 +15,11 @@ form.addEventListener("submit", (e) => {
 	const resultImage = document.createElement("img");
 	// create an object detector using cocossd model
 	const objectDetector = ml5.objectDetector("cocossd");
+	// insert result image under result element
+	result.append(resultImage);
 	// detect objects from image using object detector
 	objectDetector.detect(resultImage).then((objects) => {
 		objects.forEach((object) => {
-			console.log(object);
 			const span = document.createElement("span");
 			span.classList.add("squre-box");
 			span.innerText = `${object.label}|${Math.round(
@@ -31,8 +32,6 @@ form.addEventListener("submit", (e) => {
 			result.append(span);
 		});
 	});
-	// insert result image under result element
-	result.append(resultImage);
 	// convert image object into string for src attribute
 	resultImage.src = URL.createObjectURL(image.files[0]);
 	resultImage.classList.add("result-image");
