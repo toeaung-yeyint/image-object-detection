@@ -1,59 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/addons/p5.sound.min.js"></script>
-		<script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
-	</head>
-	<body>
-		<form class="form">
-			<label for="fileUpload">Upload Image:</label>
-			<input id="fileUpload" name="fileUpload" type="file" />
-			<div>
-				<button type="submit">Detect</button>
-				<button type="reset">Rest</button>
-			</div>
-		</form>
-		<img class="resultImage" src="" alt="" />
-		<p class="numberOfDetection"></p>
-		<ul class="resultObjectList"></ul>
-		<script>
-			const form = document.querySelector(".form");
-			const resultImage = document.querySelector(".resultImage");
-			const numberOfDetection = document.querySelector(".numberOfDetection");
-			const resultList = document.querySelector(".resultObjectList");
-			form.addEventListener("submit", (e) => {
-				e.preventDefault();
-				numberOfDetection.innerText = "";
-				resultList.innerText = "";
-				const image = document.querySelector("#fileUpload");
-				resultImage.src = URL.createObjectURL(image.files[0]);
-				resultImage.style.width = "400px";
-				resultImage.style.height = "400px";
-				resultImage.style.objectFit = "cover";
-				// create an object detector using cocossd model
-				const objectDetector = ml5.objectDetector("cocossd");
-				// detect objects from image using object detector
-				objectDetector.detect(resultImage).then((objects) => {
-					objects.forEach((object) => {
-						console.log(object.label);
-						console.log(object.confidence);
-						resultList.insertAdjacentHTML(
-							"beforeend",
-							`<li>${object.label} | confidence score: ${Math.round(
-								object.confidence * 100,
-								2
-							)} %</li>`
-						);
-					});
-					numberOfDetection.innerText = `Number of detected object(s): ${objects.length}`;
-				});
-				image.value = "";
-			});
-		</script>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/addons/p5.sound.min.js"></script>
+    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+    <link rel="stylesheet" href="./src/index.css" />
+    <script type="module" src="./src/index.js"></script>
+  </head>
+  <body>
+    <form class="form">
+      <label for="fileUpload">Upload Image:</label>
+      <input id="fileUpload" name="fileUpload" type="file" />
+      <div>
+        <button type="submit">Detect</button>
+        <button type="reset">Rest</button>
+      </div>
+    </form>
+    <img class="resultImage" src="" alt="" />
+    <p class="numberOfDetection"></p>
+    <ul class="resultObjectList"></ul>
+  </body>
 </html>
