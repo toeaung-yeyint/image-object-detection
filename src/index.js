@@ -3,14 +3,13 @@ const form = document.querySelector(".form");
 //  select reset button
 const resetButton = document.querySelector(".reset-button");
 // select result section element
-const result = document.querySelector(".result");
+const result = document.querySelector(".image-container");
 // event listener to handle the event when a user clicks on detect button
 form.addEventListener("submit", (e) => {
 	e.preventDefault();
 	// remove any child element under result section element
-	result.childNodes.forEach((element) => {
-		element?.remove();
-	});
+	result.innerText = "";
+	// select the image
 	const image = document.querySelector("#image-upload");
 	// create img element
 	const resultImage = document.createElement("img");
@@ -20,6 +19,16 @@ form.addEventListener("submit", (e) => {
 	objectDetector.detect(resultImage).then((objects) => {
 		objects.forEach((object) => {
 			console.log(object);
+			const span = document.createElement("span");
+			span.classList.add("squre-box");
+			span.innerText = `${object.label}|${Math.round(
+				object.confidence * 100
+			)}%`;
+			span.style.width = `${object.width}px`;
+			span.style.height = `${object.height}px`;
+			span.style.left = `${object.x}px`;
+			span.style.top = `${object.y}px`;
+			result.append(span);
 		});
 	});
 	// insert result image under result element
@@ -37,8 +46,6 @@ resetButton.addEventListener("click", () => {
 	const image = document.querySelector("#image-upload");
 	// remove the value from the input field
 	image.value = "";
-	// select result image
-	const resultImage = document.querySelector(".result-image");
-	// remove the image
-	resultImage.remove();
+	// remove everything inside image-container element
+	result.innerText = "";
 });
