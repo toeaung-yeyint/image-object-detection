@@ -6,10 +6,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/addons/p5.sound.min.js"></script>
 		<script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
 		<link rel="stylesheet" href="./src/index.css" />
-		<script type="module" src="./src/index.js"></script>
+		<script src="./src/index.js" defer></script>
 	</head>
 	<body>
 		<nav class="bg-dark justify-content-between nav py-1">
@@ -41,8 +40,13 @@
 				</div>
 			</div>
 			<div class="row m-3 mt-5">
-				<div class="col-lg-8 mx-auto result"></div>
+				<div id="result" class="col-lg-8 mx-auto result"></div>
 			</div>
+		</div>
+		<div class="axe">
+			<img class="image" src="/input/000000026923.jpg" alt="" />
+			<span class="text">airplane</span>
+			<span class="squre-box"></span>
 		</div>
 	</body>
 </html>

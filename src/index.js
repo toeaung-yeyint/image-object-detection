@@ -18,7 +18,9 @@ form.addEventListener("submit", (e) => {
 	const objectDetector = ml5.objectDetector("cocossd");
 	// detect objects from image using object detector
 	objectDetector.detect(resultImage).then((objects) => {
-		console.log(objects);
+		objects.forEach((object) => {
+			console.log(object);
+		});
 	});
 	// insert result image under result element
 	result.append(resultImage);
