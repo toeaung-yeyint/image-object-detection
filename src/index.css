@@ -12345,15 +12345,21 @@ textarea.form-control-lg {
   font-weight: 700;
 }
 
+.loading {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
 @media only screen and (min-width: 1400px) {
   .squre-box {
     display: inline-block;
     border: 5px solid rgb(0, 255, 0);
     position: absolute;
     color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    font-size: 1rem;
+  }
+  .squre-box:hover {
+    background: rgba(0, 0, 0, 0.3);
   }
   .detected-objects {
     display: none;

@@ -1,64 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>image-object-detection</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
-    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
-    <link rel="stylesheet" href="./index.61d3354a.css" />
-    <script src="./index.579125c3.js" defer=""></script>
-  </head>
-  <body>
-    <nav class="bg-dark justify-content-between nav py-1">
-      <a
-        class="nav-link fs-5"
-        href="https://toeaung-yeyint.github.io/my-portfolio/dist/index.html"
-        >Home</a
-      >
-      <a class="nav-link fs-5" href="#">Contact Me</a>
-    </nav>
-    <div class="container mt-5">
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <h1 class="text-center mb-5 fw-bolder text-uppercase">
-            image-object-detection
-          </h1>
-          <p>
-            This app can detect objects (e.g. a person object from an image with
-            a person in it) and display the objects along with their respective
-            confidence score. This app was built using the JS library called
-            ml5.js, however, the detection system is not 100% perfect. Upload
-            any image you would like below to use the app:
-          </p>
-        </div>
-      </div>
-      <div class="row mt-5">
-        <div class="col-lg-8 mx-auto">
-          <form class="form d-flex flex-column row-gap-3">
-            <div>
-              <label for="image-upload"><strong>Upload Image:</strong></label>
-              <input
-                id="image-upload"
-                name="image-upload"
-                type="file"
-                required=""
-              />
-            </div>
-            <button class="btn btn-primary" type="submit">Detect</button>
-          </form>
-          <button class="btn btn-danger reset-button mt-3 w-100" type="reset">
-            Rest
-          </button>
-        </div>
-      </div>
-      <div class="row m-3 mt-5">
-        <div class="col-lg-8 mx-auto">
-          <div class="image-container"></div>
-        </div>
-      </div>
-    </div>
-    <script src="/image-object-detection.3464ddca.js"></script>
-  </body>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>image-object-detection</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+		<script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+		<link rel="stylesheet" href="./index.4f962698.css" />
+		<script src="./index.60cffe43.js" defer></script>
+	</head>
+	<body>
+		<nav class="bg-dark justify-content-between nav py-1">
+			<a
+				class="fs-5 nav-link"
+				href="https://toeaung-yeyint.github.io/my-portfolio/dist/index.html"
+				>Home</a
+			>
+			<a class="fs-5 nav-link" href="#">Contact Me</a>
+		</nav>
+		<div class="container mt-5">
+			<div class="row">
+				<div class="col-lg-8 mx-auto">
+					<h1 class="fw-bolder mb-5 text-center text-uppercase">
+						image-object-detection
+					</h1>
+					<p>
+						This app can detect objects (e.g. a person object from an image with
+						a person in it) and display the objects along with their respective
+						confidence score. This app was built using the JS library called
+						ml5.js, however, the detection system is not 100% perfect. Upload
+						any image you would like below to use the app:
+					</p>
+				</div>
+			</div>
+			<div class="mt-5 row">
+				<div class="col-lg-8 mx-auto">
+					<form class="d-flex flex-column form row-gap-3">
+						<div>
+							<label for="image-upload"><strong>Upload Image:</strong></label>
+							<input
+								id="image-upload"
+								name="image-upload"
+								type="file"
+								required
+							/>
+						</div>
+						<button class="btn btn-primary" type="submit">Detect</button>
+					</form>
+					<button class="btn btn-danger mt-3 reset-button w-100" type="reset">
+						Rest
+					</button>
+				</div>
+			</div>
+			<div class="mt-5 row">
+				<div class="col-lg-8 mx-auto"><div class="image-container"></div></div>
+			</div>
+		</div>
+	</body>
 </html>

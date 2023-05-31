@@ -1,38 +1,44 @@
 @use "../node_modules/bootstrap/dist/css/bootstrap.css";
 
 .result-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 
 .image-container {
-  position: relative;
+	position: relative;
 }
 
 .squre-box {
-  display: none;
+	display: none;
 }
 
 .detected-objects {
-  margin-top: 30px;
-  font-weight: 700;
+	margin-top: 30px;
+	font-weight: 700;
+}
+
+.loading {
+	font-size: 1.5rem;
+	font-weight: 700;
 }
 
 @media only screen and (min-width: 1400px) {
-  .squre-box {
-    display: inline-block;
-    border: 5px solid rgb(0, 255, 0);
-    position: absolute;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-  }
-  .detected-objects {
-    display: none;
-  }
-  ul {
-    display: none;
-  }
+	.squre-box {
+		display: inline-block;
+		border: 5px solid rgb(0, 255, 0);
+		position: absolute;
+		color: white;
+		font-size: 1rem;
+		&:hover {
+			background: rgba($color: black, $alpha: 0.3);
+		}
+	}
+	.detected-objects {
+		display: none;
+	}
+	ul {
+		display: none;
+	}
 }
