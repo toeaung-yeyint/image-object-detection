@@ -12337,12 +12337,28 @@ textarea.form-control-lg {
 }
 
 .squre-box {
-  display: inline-block;
-  border: 5px solid rgb(0, 255, 0);
-  position: absolute;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  font-weight: 500;
+  display: none;
+}
+
+.detected-objects {
+  margin-top: 30px;
+  font-weight: 700;
+}
+
+@media only screen and (min-width: 1400px) {
+  .squre-box {
+    display: inline-block;
+    border: 5px solid rgb(0, 255, 0);
+    position: absolute;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .detected-objects {
+    display: none;
+  }
+  ul {
+    display: none;
+  }
 }/*# sourceMappingURL=index.css.map */
