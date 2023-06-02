@@ -14,8 +14,10 @@ This app can detect objects (e.g. a person object from an image with a person in
 - On mobile devices, users will see the detected objects as a list
 
 ### Tools used & credits:
-- Vanilla JavaScript
-- ml5.js (https://ml5js.org/)
+
+- HTML
 - SCSS
 - Bootstrap (https://getbootstrap.com/)
+- Vanilla JavaScript
+- ml5.js (https://ml5js.org/)
 - Parcel (https://parceljs.org/)
