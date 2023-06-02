@@ -3,7 +3,7 @@
 
 # Project description
 
-This app can detect objects (e.g. a person object from an image with a person in it) and display the objects along with their respective confidence score. This app was built using the JS library called ml5.js, however, the detection system is not 100% perfect.
+This app detects specific objects (e.g. a person from an image with a person in it) and display the detected objects along with their respective confidence scores. However, it's important to note that the detection system is not perfect and may not achieve 100% accuracy.
 
 ## Project specifications
 
