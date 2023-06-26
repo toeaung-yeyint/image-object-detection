@@ -1,23 +1,7 @@
-**Link to the app:** https://toeaung-yeyint.github.io/image-object-detection/dist/index.html
-<br/>
+# Vue 3 + Vite
 
-# Project description
+This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
-This app detects specific objects (e.g. a person from an image with a person in it) and display the detected objects along with their respective confidence scores. However, it's important to note that the detection system is not perfect and may not achieve 100% accuracy.
+## Recommended IDE Setup
 
-## Project specifications
-
-- If a user uploads an image, the app will detect objects from an image
-- If a user clicks on rest button, the result section and the upload input field will be clear
-- If a user upload again, the result section with the previous image and the upload input field will be clear
-- On desktop devices, users will see the detected objects with square boxes around them
-- On mobile devices, users will see the detected objects as a list
-
-### Tools used & credits:
-
-- HTML
-- SCSS
-- Bootstrap (https://getbootstrap.com/)
-- Vanilla JavaScript
-- ml5.js (https://ml5js.org/)
-- Parcel (https://parceljs.org/)
+- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
