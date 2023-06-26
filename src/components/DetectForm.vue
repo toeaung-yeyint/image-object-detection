@@ -19,7 +19,7 @@
 			</div>
 			<div>
 				<button
-					class="px-8 py-3 bg-gray-600 text-white mr-4 uppercase hover:bg-gray-800"
+					class="px-8 py-3 bg-gray-600 text-white mr-4 uppercase hover:bg-black"
 					type="submit"
 				>
 					Detect
