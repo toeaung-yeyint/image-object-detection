@@ -9,4 +9,4 @@ confidence scores. However, it's important to note that the detection
 system is not perfect and may not achieve 100% accuracy.
 
 <br/>
-Built using: Vue, Composition API, ml5.js, HTML, Tailwind, Vite
+Built using: Vue, Composition API, ml5.js, HTML, Tailwind CSS, Vite

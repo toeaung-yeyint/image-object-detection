@@ -1,11 +1,11 @@
 <template>
   <div class="max-w-screen-lg my-28 mx-auto">
-    <h1 class="uppercase text-center mb-10 text-3xl font-bold">
+    <h1 class="uppercase text-center mb-12 text-3xl font-bold">
       image-object-detection
     </h1>
-    <p class="mb-4">
-      <strong>Built using:</strong> Vue, Composition API, ml5.js, HTML,
-      Tailwind, Vite
+    <p class="mb-5">
+      <strong>Built using:</strong> Vue, Composition API, ml5.js, HTML, Tailwind
+      CSS, Vite
     </p>
     <p class="mb-20">
       This app detects specific objects (e.g. a person from an image with a
