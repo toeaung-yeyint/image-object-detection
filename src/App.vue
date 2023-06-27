@@ -15,6 +15,20 @@
     </p>
     <DetectForm @detect="handleDetect" @reset="handleReset" />
     <LoadingBar v-if="loading" />
+    <div v-show="result" class="flex items-center">
+      <img class="w-1/2 mr-20" :src="src" alt="" ref="resultImage" />
+      <div class="w-1/2">
+        <h2 class="mb-4 text-lg">
+          Numbers of detected objects: {{ numberOfDetectedObjects }}
+        </h2>
+        <ul>
+          <li v-for="(object, index) in detectedObjects" :key="index">
+            Label: {{ object.label }} | Confience score:
+            {{ Math.round(100 * object.confidence) }}%
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -23,13 +37,33 @@ import { ref } from "vue";
 import DetectForm from "./components/DetectForm.vue";
 import LoadingBar from "./components/LoadingBar.vue";
 
-let loading = ref(false);
+const loading = ref(false);
+const result = ref(false);
+const src = ref(null);
+const resultImage = ref(null);
+const numberOfDetectedObjects = ref(null);
+const detectedObjects = ref([]);
 
-const handleDetect = () => {
+const handleDetect = async (payload) => {
+  result.value = false;
   loading.value = true;
+  const inputImage = payload.inputImage.value;
+  const model = payload.model.value;
+  src.value = URL.createObjectURL(inputImage.files[0]);
+
+  // create an object detector using the model cocossd or yolo
+  const objectDetector = await ml5.objectDetector(model);
+  // detect objects from image using object detector,
+  await objectDetector.detect(resultImage.value).then((objects) => {
+    numberOfDetectedObjects.value = objects.length;
+    detectedObjects.value = objects;
+    console.log(detectedObjects);
+    result.value = true;
+    loading.value = false;
+  });
 };
 
 const handleReset = () => {
-  loading.value = false;
+  result.value = false;
 };
 </script>
