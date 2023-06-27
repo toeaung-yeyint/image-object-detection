@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="detect" class="flex flex-col mb-20 sm:mb-32">
+  <form @submit.prevent="detect" class="flex flex-col mb-20">
     <div
       class="border border-neutral-400 relative flex-grow rounded mb-4 sm:mb-6"
     >
