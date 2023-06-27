@@ -12,7 +12,7 @@
       learning JavaScript library, to enable users to identify objects in
       images. Notably, users have the flexibility to choose from various object
       detection models such as CocoSsd or YOLO. Additionally, the app shows the
-      detected objects along with their corresponding labels, confidence
+      detected objects along with their corresponding labels, and confidence
       scores.<br /><br /><i
         >Please note that the performance of object detection models relies on
         the quality of the input image and the inherent limitations of the
