@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-screen-lg my-28 mx-auto">
+  <div class="max-w-screen-lg my-28 mx-auto px-8">
     <h1 class="uppercase text-center mb-12 text-3xl font-bold">
       image-object-detection
     </h1>
@@ -15,18 +15,25 @@
     </p>
     <DetectForm @detect="handleDetect" @reset="handleReset" />
     <LoadingBar v-if="loading" />
-    <div v-show="result" class="flex items-center">
-      <img class="w-1/2 mr-20" :src="src" alt="" ref="resultImage" />
-      <div class="w-1/2">
-        <h2 class="mb-4 text-lg">
-          Numbers of detected objects: {{ numberOfDetectedObjects }}
-        </h2>
-        <ul>
-          <li v-for="(object, index) in detectedObjects" :key="index">
-            Label: {{ object.label }} | Confience score:
-            {{ Math.round(100 * object.confidence) }}%
-          </li>
-        </ul>
+    <div v-show="result" class="flex flex-col lg:flex-row items-center">
+      <img
+        class="w-full lg:w-2/3 mb-8 lg:mb-0"
+        :src="src"
+        alt=""
+        ref="resultImage"
+      />
+      <div class="w-full lg:w-1/3 mx-auto grid place-items-center">
+        <div>
+          <h2 class="mb-2 lg:mb-4 text-lg sm:text-xl">
+            Numbers of detected objects: {{ numberOfDetectedObjects }}
+          </h2>
+          <ul class="text-sm">
+            <li v-for="(object, index) in detectedObjects" :key="index">
+              Label: {{ object.label }}, Confience score:
+              {{ Math.round(100 * object.confidence) }}%
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

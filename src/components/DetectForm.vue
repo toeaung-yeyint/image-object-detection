@@ -1,6 +1,8 @@
 <template>
-  <form @submit.prevent="detect" class="flex flex-col mb-32">
-    <div class="border border-neutral-400 relative flex-grow rounded mb-6">
+  <form @submit.prevent="detect" class="flex flex-col mb-20 sm:mb-32">
+    <div
+      class="border border-neutral-400 relative flex-grow rounded mb-4 sm:mb-6"
+    >
       <label
         class="absolute -top-4 left-8 bg-white px-2 font-semibold"
         for="imageInput"
@@ -8,16 +10,18 @@
       </label>
       <input
         ref="inputImage"
-        class="px-10 w-full pt-6 pb-4"
+        class="px-10 w-full pt-6 pb-4 text-sm"
         type="file"
         id="imageInput"
         accept=".jpg, .jpeg, .png, .webp"
         required
       />
     </div>
-    <div class="flex items-center justify-between px-4">
-      <div>
-        <label for="models">Select a model: </label>
+    <div
+      class="flex flex-col sm:flex-row sm:items-center sm:justify-between sm:px-4"
+    >
+      <div class="mb-6 sm:m-0">
+        <label class="font-base" for="models">Select a model: </label>
         <select
           class="border border-neutral-400"
           id="models"
@@ -29,9 +33,9 @@
           <option value="yolo">YOLO</option>
         </select>
       </div>
-      <div>
+      <div class="flex flex-col sm:flex-row">
         <button
-          class="px-8 py-2 bg-gray-600 text-white mr-4 uppercase hover:bg-black"
+          class="mb-4 sm:mb-0 px-8 py-2 bg-gray-600 text-white sm:mr-4 uppercase hover:bg-black"
           type="submit"
         >
           Detect
