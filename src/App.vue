@@ -64,7 +64,6 @@ const numberOfDetectedObjects = ref(null);
 const detectedObjects = ref([]);
 const src = ref(null);
 const resultImage = ref(null);
-const resultImageContainer = ref(null);
 const scalingFactor = ref(null);
 
 onMounted(() => {
