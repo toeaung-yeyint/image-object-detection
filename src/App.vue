@@ -1,22 +1,7 @@
 <template>
-  <div class="max-w-screen-lg my-28 mx-auto px-6">
-    <h1 class="uppercase text-center mb-12 text-3xl font-bold">
-      image-object-detection
-    </h1>
-    <p class="mb-5">
-      <strong>Built using:</strong> Vue (Composition API), HTML, Tailwind CSS,
-      JavaScript, ml5.js, Vite
-    </p>
-    <p class="mb-16">
-      This fully-fledged Vue app utilizes the power of ml5.js, a machine
-      learning JavaScript library, to enable users to identify objects in
-      images. Notably, users have the flexibility to choose from various object
-      detection models such as CocoSsd or YOLO. Additionally, the app shows the
-      number of detected objects along with their corresponding labels, and
-      confidence scores. Please note that the performance of object detection
-      models relies on the quality of the input image and the inherent
-      limitations of the models(CocoSsd or YOLO) themselves.
-    </p>
+  <div class="max-w-screen-lg mx-auto mb-16 px-4">
+    <NavigationBar />
+    <IntroSection />
     <DetectForm @detect="handleDetect" @reset="handleReset" />
     <LoadingBar v-if="loading" />
     <div v-show="result" class="flex flex-col lg:flex-row">
@@ -55,6 +40,8 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
+import NavigationBar from "./components/NavigationBar.vue";
+import IntroSection from "./components/IntroSection.vue";
 import DetectForm from "./components/DetectForm.vue";
 import LoadingBar from "./components/LoadingBar.vue";
 
